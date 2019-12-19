@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sutie name="testsuite">
+    <test name="test1">
+        <classes name="com.test.ExtenedDemo">
+            <class>
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                    <include name="reportLog"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.relevantcodes.extentreports.ExtentReports"/>
+    </listeners>
+</sutie>
