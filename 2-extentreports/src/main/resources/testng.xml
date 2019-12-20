@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<sutie name="testsuite">
-    <test name="test1">
-        <classes name="com.test.ExtenedDemo">
-            <class>
+<suite name ="testname1">
+    <test name="testdemo1">
+        <classes>
+            <class name="com.test.ExtenedDemo">
                 <methods>
-                    <include name="test1"/>
-                    <include name="test2"/>
-                    <include name="test3"/>
-                    <include name="reportLog"/>
+                    <inclube name="test1"/>
+                    <inclube name="test2"/>
+                    <inclube name="test3"/>
+                    <inclube name="logDemo"/>
                 </methods>
             </class>
         </classes>
-    </test>
 
+    </test>
+    <!--配置监听器-->
     <listeners>
-        <listener class-name="com.relevantcodes.extentreports.ExtentReports"/>
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
     </listeners>
-</sutie>
+</suite>
