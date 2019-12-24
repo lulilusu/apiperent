@@ -1,0 +1,64 @@
+[
+  {
+    "description": "待cookies的get请求",
+    "request": {
+      "uri": "/get/cookies",
+      "method": "get",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "get cookies succ"
+    }
+  },
+  {
+    "description": "待cookies的post请求",
+    "request": {
+      "uri": "/post/cookies",
+      "method": "post",
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "name": "dandan",
+        "sex": "12"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "data": [
+          {
+            "keywordId": "1182158593896640514",
+            "hotWord": "汽车配件"
+          },
+          {
+            "keywordId": "1182172781721317377",
+            "hotWord": "智慧城市"
+          },
+          {
+            "keywordId": "1182172946783956993",
+            "hotWord": "智慧社区"
+          },
+          {
+            "keywordId": "1182173184336752641",
+            "hotWord": "智慧校园"
+          },
+          {
+            "keywordId": "1182163258751217665",
+            "hotWord": "印刷"
+          },
+          {
+            "keywordId": "1182174698153340930",
+            "hotWord": "智能仓库"
+          }
+        ],
+        "message": "交易成功",
+        "status": "0000",
+        "error": false,
+        "hasErrors": false
+      }
+    }
+  }
+]

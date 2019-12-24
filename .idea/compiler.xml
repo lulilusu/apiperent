@@ -9,5 +9,8 @@
         <module name="_2extentreports" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="3-mock" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

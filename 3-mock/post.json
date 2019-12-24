@@ -1,0 +1,29 @@
+[
+  {
+    "description":"post请求",
+    "request":{
+      "uri":"/postmock",
+      "method":"post"
+    },
+    "response":{
+      "text":"frist mock post"
+    }
+  },
+
+  {
+    "description":"待参数post请求",
+    "request":{
+      "uri":"/postparams",
+      "method":"post",
+      "forms":{
+        "name":"ss",
+        "sex":"man"
+      }
+    },
+    "response":{
+      "text":"mock post params"
+    }
+  }
+
+
+]

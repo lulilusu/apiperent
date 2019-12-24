@@ -1,0 +1,40 @@
+[
+  {
+    "description":"mock",
+    "request":{
+      "uri":"/demo"
+    },
+    "response":{
+      "text":"first mock succ"
+    }
+
+  },
+
+  {
+    "description":"不带参数get请求",
+    "request":{
+      "uri":"/getmock",
+      "method":"get"
+    },
+    "response":{
+      "text":"get request"
+    }
+  },
+
+  {
+    "description":"带参数get请求",
+    "request":{
+      "uri":"/getparams",
+      "method":"get",
+      "queries":{
+        "name":"hh",
+        "age":"22"
+      }
+    },
+    "response":{
+      "text":"get params succ"
+    }
+  }
+
+
+]
