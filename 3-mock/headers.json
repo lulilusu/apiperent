@@ -1,0 +1,49 @@
+[
+  {
+    "description":"设置header信息的请求",
+    "request":{
+      "uri":"/header",
+      "method":"post",
+      "headers":{
+        "content-type":"application/json"
+      },
+      "json":{
+        "name":"red"
+      }
+    },
+    "response":{
+      "json":{
+        "message":"这是一个带设置了header的post请求",
+        "status":200
+      }
+    }
+  },
+
+  {
+    "description":"重定向到百度",
+    "request":{
+      "uri":"/redirect"
+    },
+    "redirectTo":"http://www.baidu.com"
+  },
+  {
+    "description":"重定向到自己的接口",
+    "request":{
+      "uri":"/redirectt"
+    },
+    "redirectTo":"/redirect/new"
+  },
+  {
+    "description":"重定向到的接口",
+    "request":{
+      "uri":"/redirect/new"
+    },
+    "response":{
+      "json":{
+        "message":"redirect success",
+        "status":302
+      }
+    }
+  }
+
+]

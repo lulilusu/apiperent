@@ -1,6 +1,6 @@
 [
   {
-    "description": "待cookies的get请求",
+    "description": "需要带cookies的get请求",
     "request": {
       "uri": "/get/cookies",
       "method": "get",
@@ -9,7 +9,7 @@
       }
     },
     "response": {
-      "text": "get cookies succ"
+      "text": "need cookies get request"
     }
   },
   {
@@ -58,6 +58,22 @@
         "status": "0000",
         "error": false,
         "hasErrors": false
+      }
+    }
+  },
+
+  {
+    "description": "返回cookie的get请求",
+    "request": {
+      "uri": "/getcookies",
+      "method": "get"
+    },
+    "response": {
+      "cookies": {
+          "login": "true"
+      },
+      "json":{
+        "message":"cookies success"
       }
     }
   }
