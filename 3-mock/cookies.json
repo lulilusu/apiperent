@@ -61,7 +61,6 @@
       }
     }
   },
-
   {
     "description": "返回cookie的get请求",
     "request": {
@@ -70,10 +69,10 @@
     },
     "response": {
       "cookies": {
-          "login": "true"
+        "login": "true"
       },
-      "json":{
-        "message":"cookies success"
+      "json": {
+        "message": "cookies success"
       }
     }
   }
