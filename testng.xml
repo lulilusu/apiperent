@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="G:/IDEAProject/apiperent/2-extentreports/src/main/resources">
+        <classes>
+            <class name="G:/IDEAProject/apiperent/2-extentreports/src/main/java/com.test.ExtenedDemo">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                    <include name="reportLog"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

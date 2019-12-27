@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="2-extentreports" />
         <module name="4-httpclient" />
+        <module name="5-springbootbase" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
