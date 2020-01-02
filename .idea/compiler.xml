@@ -6,20 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="5-springbootbase" />
-        <module name="4-httpclient" />
         <module name="2-extentreports" />
+        <module name="4-httpclient" />
+        <module name="5-springbootbase" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="3-mock" target="1.8" />
     </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="2-extentreports" options="-parameters" />
-      <module name="4-httpclient" options="-parameters" />
-      <module name="5-springbootbase" options="-parameters" />
-    </option>
   </component>
 </project>
