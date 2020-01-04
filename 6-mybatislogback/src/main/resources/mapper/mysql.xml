@@ -5,4 +5,17 @@
     <select id="getUserCount" resultType="integer">
     select count(*) from user;
     </select>
+
+    <insert id="addUser" parameterType="com.tester.model.User">
+        insert into user (id,`name`,sex,age,addr)
+        value (#{id},#{name},#{sex},#{age},#{addr})
+    </insert>
+
+    <update id="updataUser" parameterType="com.tester.model.User">
+        update user set name=#{name},age=#{age},sex=#{sex},addr=#{addr} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="integer">
+        delete from user where id=#{id}
+    </delete>
 </mapper>

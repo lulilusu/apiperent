@@ -1,0 +1,31 @@
+Mybatis+MySql实现用例管理
+
+--  Mysql表结构设计
+假如用户管理系统
+User表
+id、userName、password、age、sex、permission、isDelete
+
+用例设计:一个表保存一个接口的case（一个表包含多个case数据)
+addUser接口取名addUserCase
+id、userName、password、sex、age、permission、isDelete、expected
+
+getUserInfo接口取名getUserInfoCase
+id、userId、expected(这里值采用mapper配置文件中查询sql语句的id，测试接口的实际返回数据，然后再用预期结果去再查一次数据库进行断言)
+
+getUserList接口取名getUserListCase
+id、userName、age、sex、expected
+(通过传入如age用户有效信息，查询出结果进行断言)
+
+login取名loginCase
+id、userName、password、expected(接口返回断言)
+
+updataUserInfo取名updataUserInfoCase
+id、userId、userName、sex、age、permission、isDelete、expected
+
+-- 配置
+数据库配置:databaseConfig.xml
+SqlMapper:SQLMapper.xml
+环境接口url配置:application.properties
+testng用例配置: testng.xml
+
+-- 模块设计
