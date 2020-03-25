@@ -7,7 +7,8 @@ import java.util.ResourceBundle;
 
 public class ConfigFile {
 
-    static ResourceBundle bundle =ResourceBundle.getBundle("application", Locale.CHINA);
+    static ResourceBundle bundle =ResourceBundle.getBundle("application", Locale.CHINA);  // 读取配置文件application.properties
+    // 拼接接口地址
     public static String getUrl(InterfaceName interfaceName){
         String uri = "";
         if (interfaceName == InterfaceName.LOGIN){

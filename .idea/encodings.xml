@@ -3,11 +3,16 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/2-extentreports" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2-extentreports/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/3-mock" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/4-httpclient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/4-httpclient/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/5-springbootbase" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/5-springbootbase/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/6-mybatislogback" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/6-mybatislogback/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/7-case" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/7-case/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

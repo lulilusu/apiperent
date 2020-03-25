@@ -29,3 +29,12 @@ SqlMapper:SQLMapper.xml
 testng用例配置: testng.xml
 
 -- 模块设计
+cases:用例编写
+一个接口一个类进行编写
+1.编写getResult从数据库拿到参数再
+
+config:报告配置、测试地址命名配置
+model:模型模块根据数据库字段编写
+utils:工具类
+接口地址拼接配置ConfigFile
+数据库连接工具类DataBaseUtil

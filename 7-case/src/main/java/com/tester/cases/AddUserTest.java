@@ -46,7 +46,7 @@ public class AddUserTest {
         String actual = getResult(addUserCase);
 
         User user = session.selectOne("addUser", addUserCase);
-
+        // 断言
         Assert.assertEquals(addUserCase.getExpected() , actual);
     }
 }
