@@ -33,8 +33,34 @@ cases:用例编写
 一个接口一个类进行编写
 1.编写getResult从数据库拿到参数再
 
-config:报告配置、测试地址命名配置
-model:模型模块根据数据库字段编写
+
+config:
+报告配置 ExtentTestNGIReporterListener.java
+测试地址定义 TestConfig.java
+
+
+model:模型模块根据数据库字段
+一张表一个类 根据数据库字段定义变量编写get、set方法
+idea安装lombok插件，导入date包
+import lombok.Data;
+@Data
+
+重写toString使返回成json字符串
+@Override
+    public String toString() {
+        return (
+                "{id:" + id + "," +
+                "userName:" + userName + "," +
+                "passWord:" + password + "," +
+                "age:" + age + "," +
+                "sex:" + sex + "," +
+                "permission:" + permission + "," +
+                "isDelete:" + isDelete + "}"
+        );
+
+
 utils:工具类
 接口地址拼接配置ConfigFile
 数据库连接工具类DataBaseUtil
+
+

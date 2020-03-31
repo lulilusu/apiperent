@@ -10,7 +10,7 @@
                 <!-- 1.加载数据库驱动 -->
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <!-- 2.数据库连接地址 -->
-                <property name="url" value="jdbc:mysql://39.96.50.65:3306/autoapi"/>
+                <property name="url" value="jdbc:mysql://192.168.10.88/autoapi"/>
                 <!-- 数据库用户... -->
                 <property name="username" value="root"/>
                 <!-- 数据库密码... -->
