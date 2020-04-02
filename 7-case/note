@@ -3,17 +3,17 @@ Mybatis+MySql实现用例管理
 --  Mysql表结构设计
 假如用户管理系统
 User表
-id、userName、password、age、sex、permission、isDelete
+id、userName、password、age、sex("0"男、"1"女)、permission("0"管理员、"1"普通用户)、isDelete
 
 用例设计:一个表保存一个接口的case（一个表包含多个case数据)
 addUser接口取名addUserCase
-id、userName、password、sex、age、permission、isDelete、expected
+id、userName、password、sex、age、permission、isDelete、expected(true、false)
 
 getUserInfo接口取名getUserInfoCase
-id、userId、expected(这里值采用mapper配置文件中查询sql语句的id，测试接口的实际返回数据，然后再用预期结果去再查一次数据库进行断言)
+id、userId、expected(getUserInfo : 这里值采用mapper配置文件中查询sql语句的id，测试接口的实际返回数据，然后再用预期结果去再查一次数据库进行断言)
 
 getUserList接口取名getUserListCase
-id、userName、age、sex、expected
+id、userName、age、sex、expected(getUserList)
 (通过传入如age用户有效信息，查询出结果进行断言)
 
 login取名loginCase

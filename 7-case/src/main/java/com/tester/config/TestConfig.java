@@ -1,7 +1,10 @@
 package com.tester.config;
 
+import org.apache.http.client.CookieStore;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.DefaultClientConnection;
 
 public class TestConfig {
     public static String addUserUrl;
@@ -11,7 +14,6 @@ public class TestConfig {
     public static String updataUserInfoUrl;
 
     public static CloseableHttpClient httpClient;
-    public static BasicCookieStore cookieStore;
-
+    public static CookieStore cookieStore;
 
 }
