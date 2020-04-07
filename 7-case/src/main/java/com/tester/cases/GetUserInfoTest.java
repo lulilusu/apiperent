@@ -44,8 +44,8 @@ public class GetUserInfoTest {
     // 实际结果
     private JSONArray getJosnResult (GetUserInfoCase getUserInfoCase) throws IOException {
         HttpPost post = new HttpPost(TestConfig.getUserInfoUrl); // 设置请求URL
-        JSONObject json = new JSONObject();
         post.setHeader("Content-Type" , "application/json"); // 设置post请求头部
+        JSONObject json = new JSONObject();
         // 获取请求参数请求
         json.put("id", getUserInfoCase.getUserId());
         StringEntity entity = new StringEntity(json.toString(), "utf-8");

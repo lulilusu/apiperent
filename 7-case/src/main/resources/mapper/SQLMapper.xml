@@ -2,15 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper>
-    <!--登录接口  case -->
+    <!--获取登录接口  case -->
     <select id="loginCase" parameterType="Integer" resultType="com.tester.model.LoginCase">
         select * from loginCase where id = #{id}
     </select>
 
-    <!--添加用户 case -->
+    <!--添加用户接口 case -->
     <select id="addUserCase" parameterType="Integer" resultType="com.tester.model.LoginCase">
         select * from addUserCase where id = #{id}
     </select>
+
+    <!-- 获取用户信息 case -->
+    <select id="getUserInfoCase" parameterType="Integer" resultType="com.tester.model.GetUserInfoCase">
+        select * from getUserInfoCase where id = #{id}
+
+    </select>
+
+    <!--更新用户信息 case -->
+    <select id="updataUserInfoCase" parameterType="Integer" resultType="com.tester.model.GetUserInfoCase">
+        select * from updataUserInfoCase where id = #{id}
+
+    </select>
+
 
     <!-- 添加用户sql -->
     <select id="addUser" parameterType="com.tester.model.AddUserCase" resultType="com.tester.model.User">
@@ -23,4 +36,49 @@
         and permission = #{permission}
         and isDelete = #{isDelete}
     </select>
+    <!-- 获取用户信息sql -->
+    <select id="getUserInfo" parameterType="com.tester.model.GetUserInfoCase" resultType="com.tester.model.User">
+        select * from user where id = #{userId}
+    </select>
+
+    <!-- 获取用户信息列表sql -->
+    <select id="getUserList" parameterType="com.tester.model.GetUserListCase" resultType="com.tester.model.User">
+        select * from user
+        <trim prefix="where" prefixOverrides="and">
+            <if test="null != userName and '' != userName">
+                AND userName=#{userName}
+            </if>
+            <if test="null != sex and '' != sex">
+                AND sex=#{sex}
+            </if>
+            <if test="null != age and '' != age">
+                AND age=#{age}
+            </if>
+        </trim>
+        ;
+    </select>
+
+    <!-- 获取更新后用户信息sql -->
+    <select id="getUpdateUserInfo" parameterType="org.alanhou.model.UpdateUserInfoCase" resultType="org.alanhou.model.User">
+        select * from user
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null != userName and '' != userName">
+                AND userName=#{userName}
+            </if>
+            <if test="null != sex and '' != sex">
+                AND sex=#{sex}
+            </if>
+            <if test="null != age and '' != age">
+                AND age=#{age}
+            </if>
+            <if test="null != permission and '' != permission">
+                AND permission=#{permission}
+            </if>
+            <if test="null != isDelete and '' != isDelete">
+                AND isDelete=#{isDelete}
+            </if>
+        </trim>
+        and id = #(userId)
+    </select>
+
 </mapper>

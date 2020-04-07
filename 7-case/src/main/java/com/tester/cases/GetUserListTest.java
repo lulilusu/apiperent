@@ -40,12 +40,12 @@ public class GetUserListTest {
 
     private JSONArray getJsonResult (GetUserListCase getUserListCase) throws IOException {
         HttpPost post = new HttpPost(TestConfig.getUserListUrl);
+        post.setHeader("Content-Type" , "application/json");
         JSONObject json = new JSONObject();
         json.put("userName" , getUserListCase.getUserName());
         json.put("age", getUserListCase.getAge());
         json.put("sex", getUserListCase.getSex());
 
-        post.setHeader("Content-Type" , "application/json");
         StringEntity entity = new StringEntity(json.toString(), "utf-8");
         post.setEntity(entity);
 
