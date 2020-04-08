@@ -23,8 +23,8 @@ import java.io.IOException;
 
 public class LoginTest {
 
-    @BeforeTest(groups = "loginTrue" , description = "测试前准备")
-    public void beforeTest(){
+    @BeforeTest(groups = "loginTrue", description = "测试前准备")
+    public void beforeTest() {
         TestConfig.loginUrl = ConfigFile.getUrl(InterfaceName.LOGIN);
         TestConfig.addUserUrl = ConfigFile.getUrl(InterfaceName.ADDUSER);
         TestConfig.getUserInfoUrl = ConfigFile.getUrl(InterfaceName.GETUSERINFO);
@@ -35,16 +35,35 @@ public class LoginTest {
         TestConfig.cookieStore = new BasicCookieStore();
     }
 
+
+    @Test(groups = "loginTrue", description = "登陆成功")
+    public void loginTure() throws IOException {
+        SqlSession session = DatabaseUtil.getSqlSession();
+        LoginCase loginCase = session.selectOne("loginCase", 1); // 查询loginCase表第一条数据
+
+        String actual = getResult(loginCase);
+        Assert.assertEquals(loginCase.getExpected(), actual);
+    }
+
+    @Test(groups = "loginFail", description = "登陆失败")
+    public void loginFail() throws IOException {
+        SqlSession session = DatabaseUtil.getSqlSession();
+        LoginCase loginCase = session.selectOne("loginCase", 2); // 查询loginCase表第二条数据
+
+        String actual = getResult(loginCase);
+        Assert.assertEquals(loginCase.getExpected(), actual);
+    }
+
     // 获取数据，并发起请求
     private String getResult(LoginCase loginCase) throws IOException {
         HttpPost httpPost = new HttpPost(TestConfig.loginUrl);  // 传入测试地址
-        httpPost.setHeader("Content-Type" , "application/json");
+        httpPost.setHeader("Content-Type", "application/json");
 
         // 传入参数
         JSONObject json = new JSONObject();
-        json.put("userName",loginCase.getUserName()); // 获取loginCase表数据
-        json.put("password",loginCase.getPassword());
-        StringEntity param = new StringEntity(json.toString(),"utf-8");
+        json.put("userName", loginCase.getUserName()); // 获取loginCase表数据
+        json.put("password", loginCase.getPassword());
+        StringEntity param = new StringEntity(json.toString(), "utf-8");
         httpPost.setEntity(param);
 
         CloseableHttpResponse response = TestConfig.httpClient.execute(httpPost);  // 发起请求并返回响应
@@ -52,23 +71,4 @@ public class LoginTest {
 
         return result;
     }
-
-    @Test(groups = "loginTrue" , description = "登陆成功")
-    public void loginTure() throws IOException {
-        SqlSession session = DatabaseUtil.getSqlSession();
-        LoginCase loginCase = session.selectOne("loginCase", 1); // 查询loginCase表第一条数据
-
-        String actual = getResult(loginCase);
-        Assert.assertEquals(loginCase.getExpected(),actual);
-    }
-
-    @Test(groups = "loginFail" , description = "登陆失败")
-    public void loginFail() throws IOException {
-        SqlSession session = DatabaseUtil.getSqlSession();
-        LoginCase loginCase = session.selectOne("loginCase", 2); // 查询loginCase表第一条数据
-
-        String actual = getResult(loginCase);
-        Assert.assertEquals(loginCase.getExpected(),actual);
-    }
-
 }

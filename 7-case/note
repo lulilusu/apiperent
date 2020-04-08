@@ -23,16 +23,41 @@ updataUserInfo取名updataUserInfoCase
 id、userId、userName、sex、age、permission、isDelete、expected
 
 -- 配置
-数据库配置:databaseConfig.xml
-SqlMapper:SQLMapper.xml
-环境接口url配置:application.properties
-testng用例配置: testng.xml
+数据库配置:
+databaseConfig.xml
+SqlMapper:SQLMapper.xml    这里分类，后带case标识是测试用例，没有带case标识是预期结果中查询标识
+
+环境接口url配置:
+application.properties
+
+testng用例配置:
+testng.xml
 
 -- 模块设计
 cases:用例编写
 一个接口一个类进行编写
-1.编写getResult从数据库拿到参数再
+1.LoginTest.java
+@beforeTest，定义一个测试组，初始化url和httpclients，方便后面调用
+getResult方法 获取model get方法获取数据，调用接口传入获取响应，将响应定义String设为返回值
+loginTrue、loginFalse，属于loginTrue测试组，一个方法一条用例，连接数据库查询loginCase在SQLMapper.xml写对应语句 调用getResult方法，进行断言
 
+2.AddUserTest.java
+adduser方法   @test(dependsOnGroups = "loginTrue")  该条测试用例(方法)依赖loginTrue组的@beforeTest方法
+getResult方法  相同逻辑
+
+3.GetUserInfoTest.java
+getUserInfo方法
+getJosnResult方法
+该方法获取的是用户信息所以这里返回值设置JSONArray格式，实际结果和预期结果都转为JSONArray格式进行断言
+注意一点返回的USER是对象，先转为List再转为JSONArray
+
+
+4.GetUserListTest.java
+由于是List，对实际结果长度进行遍历，获取expected和actual中值，一个个进行断言
+
+5.UpdataUserInfoTest.java
+getResult方法 返回值int类型，返回userId
+更新用户信息接口是对数据库进行updata操作，所以判断更新后user表信息是否为空就好了，若是具体判断哪个值会很麻烦。
 
 config:
 报告配置 ExtentTestNGIReporterListener.java
@@ -60,7 +85,7 @@ import lombok.Data;
 
 
 utils:工具类
-接口地址拼接配置ConfigFile
-数据库连接工具类DataBaseUtil
+接口地址拼接配置ConfigFile.java
+数据库连接工具类DataBaseUtil.java
 
 

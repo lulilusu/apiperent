@@ -39,7 +39,7 @@ public class AddUserTest {
 
 
 
-    @Test(groups = "loginTrue" , description = "添加用户")
+    @Test(dependsOnGroups = "loginTrue" , description = "添加用户")
     public void addUser() throws IOException {
         SqlSession session= DatabaseUtil.getSqlSession();
         AddUserCase addUserCase = session.selectOne("addUserCase", 1);

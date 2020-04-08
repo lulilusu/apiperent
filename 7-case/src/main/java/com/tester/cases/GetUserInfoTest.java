@@ -23,7 +23,7 @@ import java.util.List;
 
 public class GetUserInfoTest {
 
-    @Test(dependsOnGroups = "loginTrue" , description = "获取userId为1用户信息")
+    @Test(dependsOnGroups = "loginTrue", description = "获取userId为1用户信息")
     public void getUserInfo() throws IOException {
         SqlSession session = DatabaseUtil.getSqlSession();
         GetUserInfoCase getUserInfoCase = session.selectOne("getUserInfoCase", 1);
@@ -38,13 +38,13 @@ public class GetUserInfoTest {
         JSONArray expected = new JSONArray((userList));  //转换预期结果
         JSONArray actual = new JSONArray(josnResult.getString(0));  // 转换实际结果
 
-        Assert.assertEquals(expected.toString(),actual.toString());
+        Assert.assertEquals(expected.toString(), actual.toString());
     }
 
     // 实际结果
-    private JSONArray getJosnResult (GetUserInfoCase getUserInfoCase) throws IOException {
+    private JSONArray getJosnResult(GetUserInfoCase getUserInfoCase) throws IOException {
         HttpPost post = new HttpPost(TestConfig.getUserInfoUrl); // 设置请求URL
-        post.setHeader("Content-Type" , "application/json"); // 设置post请求头部
+        post.setHeader("Content-Type", "application/json"); // 设置post请求头部
         JSONObject json = new JSONObject();
         // 获取请求参数请求
         json.put("id", getUserInfoCase.getUserId());
