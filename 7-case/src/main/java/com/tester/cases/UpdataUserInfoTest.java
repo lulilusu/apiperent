@@ -22,7 +22,7 @@ public class UpdataUserInfoTest {
     @Test(dependsOnGroups = "loginTrue", description = "更新信息")
     public void updataUserInfo() throws Exception {
         SqlSession session = DatabaseUtil.getSqlSession();
-        UpdataUserInfoCase updataUserInfoCase = session.selectOne("updataUserInfoCase", 2);
+        UpdataUserInfoCase updataUserInfoCase = session.selectOne("updateUserInfoCase", 2);
 
         int result = getResult(updataUserInfoCase);
         Thread.sleep(3000);
@@ -35,7 +35,7 @@ public class UpdataUserInfoTest {
     @Test(dependsOnGroups = "loginTrue", description = "删除信息")
     public void deleteUser() throws Exception {
         SqlSession session = DatabaseUtil.getSqlSession();
-        UpdataUserInfoCase updataUserInfoCase = session.selectOne("updataUserInfoCase", 1);
+        UpdataUserInfoCase updataUserInfoCase = session.selectOne("updateUserInfoCase", 1);
 
         int result = getResult(updataUserInfoCase);
         Thread.sleep(3000);

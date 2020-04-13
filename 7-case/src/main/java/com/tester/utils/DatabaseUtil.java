@@ -15,4 +15,9 @@ public class DatabaseUtil {
         SqlSession sqlSession = factory.openSession();  // SqlSession执行配置文件中sql语句
         return sqlSession;
     }
+
+    public static void main(String[] args) throws IOException {
+        SqlSession sqlSession = DatabaseUtil.getSqlSession();
+        System.out.println(sqlSession.toString());
+    }
 }

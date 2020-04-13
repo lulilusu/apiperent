@@ -37,7 +37,7 @@ public class LoginTest {
 
 
     @Test(groups = "loginTrue", description = "登陆成功")
-    public void loginTure() throws IOException {
+    public void loginTrue() throws IOException {
         SqlSession session = DatabaseUtil.getSqlSession();
         LoginCase loginCase = session.selectOne("loginCase", 1); // 查询loginCase表第一条数据
 

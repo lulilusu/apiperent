@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<sutie name="用户管理系统测试套件">
-    <test name="用户管理系统测试用例">
+<suite name="test suite">
+    <test name="testcases">
         <classes>
             <class name="com.tester.cases.LoginTest">
                 <methods>
-                    <include name="loginTrue" />
-                    <include name="loginFail" />
+                    <include name="loginTrue"/>
+                    <include name="loginFail"/>
                 </methods>
             </class>
+
             <class name="com.tester.cases.AddUserTest">
                 <methods>
-                    <include name="addUser" />
+                    <include name="addUser"/>
                 </methods>
             </class>
+
             <class name="com.tester.cases.GetUserInfoTest">
                 <methods>
-                    <include name="getUserInfo" />
+                    <include name="getUserInfo"/>
                 </methods>
             </class>
+
             <class name="com.tester.cases.GetUserListTest">
                 <methods>
-                    <include name="getUserListInfo" />
+                    <include name="getUserListInfo"/>
                 </methods>
             </class>
+
             <class name="com.tester.cases.UpdataUserInfoTest">
                 <methods>
-                    <include name="updataUserInfo" />
-                    <include name="deleteUser" />
+                    <include name="updataUserInfo"/>
+                    <include name="deleteUser"/>
                 </methods>
             </class>
         </classes>
     </test>
-
-</sutie>
+</suite>
