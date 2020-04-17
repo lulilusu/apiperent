@@ -27,7 +27,7 @@
                 </methods>
             </class>
 
-            <class name="com.tester.cases.UpdataUserInfoTest">
+            <class name="com.tester.cases.UpdateUserInfoTest">
                 <methods>
                     <include name="updataUserInfo"/>
                     <include name="deleteUser"/>

@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="7-case" />
+        <module name="2-extentreports" />
         <module name="5-springbootbase" />
         <module name="4-httpclient" />
-        <module name="2-extentreports" />
         <module name="6-mybatislogback" />
+        <module name="8-api" />
+        <module name="7-case" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +26,7 @@
       <module name="5-springbootbase" options="-parameters" />
       <module name="6-mybatislogback" options="-parameters" />
       <module name="7-case" options="-parameters" />
+      <module name="8-api" options="-parameters" />
     </option>
   </component>
 </project>

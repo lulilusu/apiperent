@@ -1,15 +1,14 @@
-package com.tester.model;
+package com.test.model;
 
 import lombok.Data;
 
 @Data
-public class UpdataUserInfoCase {
+public class User {
     private int id;
-    private int userId;
     private String userName;
+    private String password;
     private String age;
     private String sex;
     private String permission;
     private String isDelete;
-    private String expected;
 }

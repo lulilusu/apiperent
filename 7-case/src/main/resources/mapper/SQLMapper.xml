@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper>
+<mapper namespace="com.tester.model">
     <!--获取登录接口  case -->
     <select id="loginCase" parameterType="Integer" resultType="com.tester.model.LoginCase">
         select * from loginCase where id = #{id}
     </select>
 
     <!--添加用户接口 case -->
-    <select id="addUserCase" parameterType="Integer" resultType="com.tester.model.LoginCase">
+    <select id="addUserCase" parameterType="Integer" resultType="com.tester.model.AddUserCase">
         select * from addUserCase where id = #{id}
     </select>
 
@@ -18,8 +18,13 @@
 
     </select>
 
+    <!--获取用户列表 case-->
+    <select id="getUserListCase" parameterType="Integer" resultType="com.tester.model.GetUserListCase">
+        select * from getUserListCase where id = #{id}
+    </select>
+
     <!--更新用户信息 case -->
-    <select id="updataUserInfoCase" parameterType="Integer" resultType="com.tester.model.GetUserInfoCase">
+    <select id="updataUserInfoCase" parameterType="Integer" resultType="com.tester.model.UpdateUserInfoCase">
         select * from updataUserInfoCase where id = #{id}
 
     </select>
@@ -59,7 +64,7 @@
     </select>
 
     <!-- 获取更新后用户信息sql -->
-    <select id="getUpdateUserInfo" parameterType="org.alanhou.model.UpdateUserInfoCase" resultType="org.alanhou.model.User">
+    <select id="getUpdateUserInfo" parameterType="com.tester.model.UpdateUserInfoCase" resultType="com.tester.model.User">
         select * from user
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != userName and '' != userName">

@@ -21,6 +21,7 @@
         <module>5-springbootbase</module>
         <module>6-mybatislogback</module>
         <module>7-case</module>
+        <module>8-api</module>
     </modules>
 
 

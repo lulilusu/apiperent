@@ -1,0 +1,32 @@
+16:38:03.654 [main] INFO  com.test.Application - Starting Application on DESKTOP-O35KBGH with PID 21992 (G:\IDEAProject\apiperent\8-api\target\classes started by DELL in G:\IDEAProject\apiperent)
+16:38:03.664 [main] INFO  com.test.Application - No active profile set, falling back to default profiles: default
+16:38:05.526 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8881"]
+16:38:05.527 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+16:38:05.528 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.29]
+16:38:05.529 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+16:38:05.530 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+16:38:05.530 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:38:05.530 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:38:06.602 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]
+16:38:06.750 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:38:07.585 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+16:38:07.960 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+16:38:08.000 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+16:38:08.047 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+16:38:08.417 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8881"]
+16:38:08.453 [main] INFO  com.test.Application - Started Application in 5.513 seconds (JVM running for 7.746)
+16:38:11.096 [http-nio-8881-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:38:24.312 [http-nio-8881-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:38:25.248 [http-nio-8881-exec-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:38:25.314 [http-nio-8881-exec-9] INFO  com.test.controller.UserManager - 查看结果:1
+16:38:25.314 [http-nio-8881-exec-9] INFO  com.test.controller.UserManager - 登录用户是:jack
+16:38:59.671 [http-nio-8881-exec-1] INFO  com.test.controller.UserManager - cookie 验证通过
+16:38:59.678 [http-nio-8881-exec-1] INFO  com.test.controller.UserManager - 成功添加1用户
+16:39:31.421 [http-nio-8881-exec-7] INFO  com.test.controller.UserManager - cookie 验证通过
+16:39:31.451 [http-nio-8881-exec-7] INFO  com.test.controller.UserManager - 获取用户信息成功
+16:39:37.275 [http-nio-8881-exec-8] INFO  com.test.controller.UserManager - cookie 验证通过
+16:39:37.278 [http-nio-8881-exec-8] INFO  com.test.controller.UserManager - 获取用户信息成功
+16:39:41.619 [http-nio-8881-exec-9] INFO  com.test.controller.UserManager - cookie 验证通过
+16:39:41.621 [http-nio-8881-exec-9] INFO  com.test.controller.UserManager - 获取用户信息成功
+16:40:20.419 [http-nio-8881-exec-5] INFO  com.test.controller.UserManager - cookie 验证通过
+16:40:20.425 [http-nio-8881-exec-5] INFO  com.test.controller.UserManager - 更新条数1

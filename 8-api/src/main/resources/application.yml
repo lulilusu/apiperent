@@ -1,0 +1,21 @@
+server:
+  port: 8881
+
+logging:
+  config: G:\IDEAProject\apiperent\8-api\src\main\resources\log4j2-spring.xml
+  level:
+    cn.jay.repository: trace
+
+spring:
+  application:
+    name: userManger
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.10.88:3306/autoapi?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Xxx123456
+mybatis:
+  type-aliases-package: com.test.model
+  mapper-locations:
+    - mapper/*
+
