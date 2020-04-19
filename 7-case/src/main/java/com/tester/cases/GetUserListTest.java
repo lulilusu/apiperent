@@ -1,6 +1,5 @@
 package com.tester.cases;
 
-import com.sun.org.apache.regexp.internal.RE;
 import com.tester.config.TestConfig;
 import com.tester.model.GetUserListCase;
 import com.tester.model.User;
@@ -23,7 +22,7 @@ public class GetUserListTest {
     @Test(dependsOnGroups = "loginTrue", description = "获取用户性别为男的用户信息")
     public void getUserListInfo() throws IOException {
         SqlSession session = DatabaseUtil.getSqlSession();
-        GetUserListCase getUserListCase = session.selectOne("getUserList", 1);
+        GetUserListCase getUserListCase = session.selectOne("getUserListCase", 1);
 
         JSONArray jsonResult = getJsonResult(getUserListCase);
         List<User> userlist = session.selectList(getUserListCase.getExpected(), getUserListCase);
@@ -36,8 +35,8 @@ public class GetUserListTest {
         Assert.assertEquals(userListJson.length(), jsonResult.length());
         for (int i = 0; i < jsonResult.length(); i++) {
             JSONObject actual = (JSONObject) jsonResult.get(i);
-            JSONObject expected = (JSONObject) userListJson.get(i);
-            Assert.assertEquals(expected.toString(), actual.toString());
+            JSONObject expect = (JSONObject) userListJson.get(i);
+            Assert.assertEquals(expect.toString(), actual.toString());
         }
 
     }
@@ -54,9 +53,12 @@ public class GetUserListTest {
         StringEntity entity = new StringEntity(json.toString(), "utf-8");
         post.setEntity(entity);
 
+//        TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
+//        HttpResponse response = TestConfig.defaultHttpClient.execute(post);
+
         CloseableHttpResponse response = TestConfig.httpClient.execute(post);
         String result = EntityUtils.toString(response.getEntity(), "utf-8");
-        JSONArray array = new JSONArray(result);
+        JSONArray array = new JSONArray(result.toCharArray());
 
         return array;
     }

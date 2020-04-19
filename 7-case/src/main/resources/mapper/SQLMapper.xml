@@ -24,8 +24,8 @@
     </select>
 
     <!--更新用户信息 case -->
-    <select id="updataUserInfoCase" parameterType="Integer" resultType="com.tester.model.UpdateUserInfoCase">
-        select * from updataUserInfoCase where id = #{id}
+    <select id="updateUserInfoCase" parameterType="Integer" resultType="com.tester.model.UpdateUserInfoCase">
+        select * from updateUserInfoCase where id = #{id}
 
     </select>
 
@@ -34,7 +34,6 @@
     <select id="addUser" parameterType="com.tester.model.AddUserCase" resultType="com.tester.model.User">
         select *  from  user where
         userName = #{userName}
-        and userName = #{userName}
         and password = #{password}
         and age = #{age}
         and sex = #{sex}
@@ -83,7 +82,7 @@
                 AND isDelete=#{isDelete}
             </if>
         </trim>
-        and id = #(userId)
+        and id = #{userId}
     </select>
 
 </mapper>

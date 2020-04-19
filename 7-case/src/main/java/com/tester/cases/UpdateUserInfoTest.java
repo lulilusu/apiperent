@@ -20,7 +20,7 @@ public class UpdateUserInfoTest {
     @Test(dependsOnGroups = "loginTrue", description = "更新信息")
     public void updataUserInfo() throws Exception {
         SqlSession session = DatabaseUtil.getSqlSession();
-        UpdateUserInfoCase updateUserInfoCase = session.selectOne("updateUserInfoCase", 2);
+        UpdateUserInfoCase updateUserInfoCase = session.selectOne("updateUserInfoCase", 1);
 
         int result = getResult(updateUserInfoCase);
         Thread.sleep(3000);
@@ -33,7 +33,7 @@ public class UpdateUserInfoTest {
     @Test(dependsOnGroups = "loginTrue", description = "删除信息")
     public void deleteUser() throws Exception {
         SqlSession session = DatabaseUtil.getSqlSession();
-        UpdateUserInfoCase updateUserInfoCase = session.selectOne("updateUserInfoCase", 1);
+        UpdateUserInfoCase updateUserInfoCase = session.selectOne("updateUserInfoCase", 2);
 
         int result = getResult(updateUserInfoCase);
         Thread.sleep(3000);
@@ -56,6 +56,9 @@ public class UpdateUserInfoTest {
 
         StringEntity entity = new StringEntity(jsonParam.toString());
         post.setEntity(entity);
+
+//        TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
+//        HttpResponse response = TestConfig.defaultHttpClient.execute(post);
 
         CloseableHttpResponse response = TestConfig.httpClient.execute(post);
         String result = EntityUtils.toString(response.getEntity(), "utf-8");

@@ -1,10 +1,7 @@
 package com.tester.config;
 
 import org.apache.http.client.CookieStore;
-import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.conn.DefaultClientConnection;
 
 public class TestConfig {
     public static String addUserUrl;
@@ -15,5 +12,9 @@ public class TestConfig {
 
     public static CloseableHttpClient httpClient;
     public static CookieStore cookieStore;
+
+    // httpclient4.2.3版本
+//    public static DefaultHttpClient defaultHttpClient;
+//    public static CookieStore store;
 
 }

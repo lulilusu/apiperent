@@ -32,6 +32,9 @@ public class AddUserTest {
         StringEntity param = new StringEntity(json.toString(), "utf-8");
         httpPost.setEntity(param);
 
+//        TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
+//        HttpResponse response = TestConfig.defaultHttpClient.execute(post);
+
         CloseableHttpResponse response = TestConfig.httpClient.execute(httpPost);
         String result = EntityUtils.toString(response.getEntity(), "utf-8");
         return result;

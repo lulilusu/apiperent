@@ -7,8 +7,6 @@ import com.tester.utils.DatabaseUtil;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.BasicCookieStore;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.json.JSONArray;
@@ -37,8 +35,7 @@ public class GetUserInfoTest {
 
         JSONArray expected = new JSONArray((userList));  //转换预期结果
         JSONArray actual = new JSONArray(josnResult.getString(0));  // 转换实际结果
-
-        Assert.assertEquals(expected.toString(), actual.toString());
+        Assert.assertEquals(expected.toString(), actual.toString());    // toString成字符串进行断言便不会出错，两个JSONArray进行判断会出错
     }
 
     // 实际结果
@@ -52,10 +49,10 @@ public class GetUserInfoTest {
         post.setEntity(entity);
 
         // 设置请求cookie
-        TestConfig.cookieStore = new BasicCookieStore();   // 创建cookie实例
-        TestConfig.httpClient = HttpClients.custom().setDefaultCookieStore(TestConfig.cookieStore).build(); //设置cookie
+//        TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
+//        HttpResponse response = TestConfig.defaultHttpClient.execute(post);// 旧版本发起请求并返回值
 
-        CloseableHttpResponse response = TestConfig.httpClient.execute(post);  // 发起请求并返回值
+        CloseableHttpResponse response = TestConfig.httpClient.execute(post);
         String result = EntityUtils.toString(response.getEntity(), "utf-8"); // 转换返回值
 
         // 转为json数组

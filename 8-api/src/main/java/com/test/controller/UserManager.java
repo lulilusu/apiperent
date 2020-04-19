@@ -59,7 +59,7 @@ public class UserManager {
     @ApiOperation(value = "获取用户信息(列表)" ,httpMethod = "POST")
     @RequestMapping(value = "/getUserInfo" , method = RequestMethod.POST)
     public List<User> getUserInfo(@RequestBody User user, HttpServletRequest request){
-        boolean x = this.verifyCookies(request);
+        boolean x = verifyCookies(request);
         if (x == true){
             List<User> list = template.selectList("getUserInfo", user);
             log.info("获取用户信息成功");
@@ -73,7 +73,7 @@ public class UserManager {
     @ApiOperation(value = "更新用户信息" ,httpMethod = "POST")
     @RequestMapping(value = "/updateUserInfo" , method = RequestMethod.POST)
     public int updateUserInfo(@RequestBody User user, HttpServletRequest request){
-        boolean x = this.verifyCookies(request);
+        boolean x = verifyCookies(request);
         int i = 0;
         if (x == true){
             i = template.update("updateUserInfo", user);
