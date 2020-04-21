@@ -44,11 +44,12 @@ public class UpdateUserInfoTest {
     }
 
     private int getResult(UpdateUserInfoCase updateUserInfoCase) throws Exception {
-        HttpPost post = new HttpPost(TestConfig.updataUserInfoUrl);
+        HttpPost post = new HttpPost(TestConfig.updateUserInfoUrl);
         post.setHeader("Content-Type", "application/json");
         JSONObject jsonParam = new JSONObject();
         jsonParam.put("id", updateUserInfoCase.getUserId());  // 接口字段名是user表id，所以这里取值updataUserInfoCase表userId
         jsonParam.put("userName", updateUserInfoCase.getUserName());
+        jsonParam.put("password", updateUserInfoCase.getPassword());
         jsonParam.put("sex", updateUserInfoCase.getSex());
         jsonParam.put("age", updateUserInfoCase.getAge());
         jsonParam.put("permission", updateUserInfoCase.getPermission());
@@ -60,8 +61,11 @@ public class UpdateUserInfoTest {
 //        TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
 //        HttpResponse response = TestConfig.defaultHttpClient.execute(post);
 
+        String result=null;
         CloseableHttpResponse response = TestConfig.httpClient.execute(post);
-        String result = EntityUtils.toString(response.getEntity(), "utf-8");
+        System.out.println(response.getStatusLine());
+        System.out.println(response.getEntity());
+        result = EntityUtils.toString(response.getEntity(), "utf-8");
 
         return Integer.parseInt(result);   //将结果返回为整数
     }

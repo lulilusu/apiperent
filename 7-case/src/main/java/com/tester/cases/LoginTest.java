@@ -29,7 +29,7 @@ public class LoginTest {
         TestConfig.addUserUrl = ConfigFile.getUrl(InterfaceName.ADDUSER);
         TestConfig.getUserInfoUrl = ConfigFile.getUrl(InterfaceName.GETUSERINFO);
         TestConfig.getUserListUrl = ConfigFile.getUrl(InterfaceName.GETUSERLIST);
-        TestConfig.updataUserInfoUrl = ConfigFile.getUrl(InterfaceName.UPDATAUSERINFO);
+        TestConfig.updateUserInfoUrl = ConfigFile.getUrl(InterfaceName.UPDATEUSERINFO);
 
         TestConfig.httpClient = HttpClients.createDefault();
         TestConfig.cookieStore = new BasicCookieStore();   // 实例化cookie store

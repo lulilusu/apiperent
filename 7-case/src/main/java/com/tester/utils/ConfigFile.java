@@ -17,8 +17,8 @@ public class ConfigFile {
         if (interfaceName == InterfaceName.ADDUSER){
             uri = bundle.getString("addUser.uri");
         }
-        if (interfaceName == InterfaceName.UPDATAUSERINFO){
-            uri = bundle.getString("updataUserInfo.uri");
+        if (interfaceName == InterfaceName.UPDATEUSERINFO){
+            uri = bundle.getString("updateUserInfo.uri");
         }
         if (interfaceName == InterfaceName.GETUSERLIST){
             uri = bundle.getString("getUserList.uri");

@@ -8,7 +8,7 @@ public class TestConfig {
     public static String getUserInfoUrl;
     public static String getUserListUrl;
     public static String loginUrl;
-    public static String updataUserInfoUrl;
+    public static String updateUserInfoUrl;
 
     public static CloseableHttpClient httpClient;
     public static CookieStore cookieStore;

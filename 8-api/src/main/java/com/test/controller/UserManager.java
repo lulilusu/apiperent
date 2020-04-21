@@ -4,6 +4,7 @@ import com.test.model.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +16,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-import java.util.Objects;
 
 @Slf4j
 @RestController
@@ -85,7 +85,7 @@ public class UserManager {
     private boolean verifyCookies(HttpServletRequest request){
         Cookie[] cookies = request.getCookies();
         boolean isCookie = false;
-        if (Objects.isNull(cookies)){
+        if (ObjectUtils.isEmpty(cookies)){
             log.info("cookie为空");
             return isCookie = false;
         }
@@ -94,6 +94,7 @@ public class UserManager {
                 log.info("cookie 验证通过");
                 return isCookie = true;
             }
+
         }
         return isCookie;
     }

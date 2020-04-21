@@ -2,7 +2,7 @@ server:
   port: 8881
 
 logging:
-  config: G:\IDEAProject\apiperent\8-api\src\main\resources\log4j2-spring.xml
+  config: ./8-api/src/main/resources/log4j2-spring.xml
   level:
     cn.jay.repository: trace
 
