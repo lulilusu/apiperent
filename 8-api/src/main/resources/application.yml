@@ -2,8 +2,10 @@ server:
   port: 8881
 
 logging:
+  config: ./classes/log4j2-spring.xml
   level:
     cn.jay.repository: trace
+
 
 spring:
   application:
