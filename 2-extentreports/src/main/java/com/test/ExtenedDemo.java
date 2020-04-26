@@ -4,9 +4,6 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-/**
- * Hello world!
- */
 public class ExtenedDemo {
 
     @Test
@@ -15,7 +12,7 @@ public class ExtenedDemo {
    }
     @Test
     public void test2(){
-        Assert.assertEquals(1,1);
+        Assert.assertEquals(1,3);
     }
     @Test
     public void test3(){

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name ="testname1">
     <test name="testdemo1">
         <classes>
             <class name="com.test.ExtenedDemo">
                 <methods>
-                    <inclube name="test1"/>
-                    <inclube name="test2"/>
-                    <inclube name="test3"/>
-                    <inclube name="logDemo"/>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
                 </methods>
             </class>
         </classes>
@@ -15,6 +15,7 @@
     </test>
     <!--配置监听器-->
     <listeners>
-        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
 </suite>
