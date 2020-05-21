@@ -12,7 +12,7 @@ spring:
     name: userManger
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.10.88:3306/autoapi?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://10.1.100.102:3306/autoapi?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: Xxx123456
 mybatis:
